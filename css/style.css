@@ -1,0 +1,1192 @@
+/* William Morris Red & Blue Pattern Inspired Color Palette */
+:root {
+    /* William Morris Red & Blue Color Palette - Matching Margin Image */
+    --deep-forest: #1a365d;      /* Navy blue (was deep forest green) */
+    --sage-green: #1a365d;       /* Navy blue (was sage green) */
+    --warm-cream: #f4f1e8;       /* Warm cream background */
+    --golden-yellow: #d4a574;    /* Muted gold from Morris designs */
+    --deep-burgundy: #8b2635;    /* Rich burgundy red from margin image */
+    --soft-blue: #3c5a78;       /* Deep blue from Morris patterns */
+    --charcoal: #2d2d2d;        /* Charcoal for text */
+    --light-sage: #1a365d;      /* Navy blue (was light sage) */
+    --parchment: #f8f5f0;       /* Light parchment */
+    --morris-red: #a8334a;      /* Primary red from William Morris patterns */
+    --morris-blue: #2d4a66;     /* Primary blue from William Morris patterns */
+    --morris-cream: #f2ede4;    /* Cream tone from Morris backgrounds */
+    --navy-blue: #1a365d;       /* Navy blue for main text */
+    
+    /* Typography */
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Lato', sans-serif;
+    
+    /* Spacing */
+    --section-padding: 4rem 0;
+    --container-max-width: 1200px;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* William Morris Background Pattern for Page Margins */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 100vh;
+    background-image: url('../williammorrisredblue.png');
+    background-size: 120px auto;
+    background-repeat: repeat-y;
+    background-position: 0 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 100vh;
+    background-image: url('../williammorrisredblue.png');
+    background-size: 120px auto;
+    background-repeat: repeat-y;
+    background-position: 0 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.floral-border {
+    position: relative;
+}
+
+.floral-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px;
+    height: 8px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--morris-blue) 12%, 
+        var(--golden-yellow) 28%,
+        var(--morris-red) 50%, 
+        var(--golden-yellow) 72%,
+        var(--morris-blue) 88%, 
+        transparent 100%);
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.floral-border::after {
+    content: '✠ ❦ ✠ ❦ ✠';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--golden-yellow);
+    font-size: 1.4rem;
+    letter-spacing: 0.9rem;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.25);
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
+}
+
+.leaf-decoration {
+    position: relative;
+}
+
+.leaf-decoration::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--sage-green);
+    border-radius: 0 100% 0 100%;
+    transform: translateY(-50%) rotate(45deg);
+    opacity: 0.6;
+}
+
+.leaf-decoration::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--sage-green);
+    border-radius: 0 100% 0 100%;
+    transform: translateY(-50%) rotate(-45deg);
+    opacity: 0.6;
+}
+
+/* Decorative corner elements */
+.corner-flourish {
+    position: relative;
+}
+
+.corner-flourish::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    border-top: 2px solid var(--golden-yellow);
+    border-left: 2px solid var(--golden-yellow);
+    border-radius: 10px 0 0 0;
+}
+
+.corner-flourish::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-bottom: 2px solid var(--golden-yellow);
+    border-right: 2px solid var(--golden-yellow);
+    border-radius: 0 0 10px 0;
+}
+
+/* Vine pattern for section dividers */
+.vine-divider {
+    position: relative;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.vine-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--morris-blue) 5%, 
+        var(--morris-red) 25%,
+        var(--golden-yellow) 50%,
+        var(--morris-red) 75%,
+        var(--morris-blue) 95%, 
+        transparent 100%);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.vine-divider::after {
+    content: '🕊 ✠ 🕊';
+    background: var(--warm-cream);
+    padding: 0 1.5rem;
+    color: var(--navy-blue);
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    letter-spacing: 0.5rem;
+}
+
+/* Enhanced patterns for specific sections */
+.pattern-light {
+    background-image: 
+        radial-gradient(circle at 30% 40%, rgba(125, 132, 113, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 70% 80%, rgba(168, 181, 160, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px, 30px 30px;
+}
+
+.pattern-medium {
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(44, 85, 48, 0.15) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(125, 132, 113, 0.1) 1px, transparent 1px),
+        linear-gradient(135deg, transparent 48%, rgba(212, 175, 55, 0.05) 49%, rgba(212, 175, 55, 0.05) 51%, transparent 52%);
+    background-size: 80px 80px, 40px 40px, 60px 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--navy-blue);
+    background-color: var(--warm-cream);
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0 120px; /* Add margins for William Morris background patterns */
+    min-height: 100vh;
+}
+
+/* Adjust patterns for mobile */
+@media (max-width: 768px) {
+    body {
+        margin: 0 60px; /* Reduced margins on mobile */
+    }
+    
+    body::before,
+    body::after {
+        width: 60px;
+        background-size: 60px auto, 40px 90px;
+        background-position: 0 0, 10px 0;
+    }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    color: var(--morris-red);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--navy-blue);
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--soft-blue);
+    margin-bottom: 1.5rem;
+}
+
+/* Layout */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: var(--section-padding);
+}
+
+/* Header and Navigation */
+.header {
+    background-color: var(--deep-forest);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    position: relative;
+}
+
+/* Header Image Styles */
+.header-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 5px solid var(--golden-yellow);
+    background: 
+        /* Books image as background */
+        linear-gradient(rgba(240, 235, 224, 0.15), rgba(240, 235, 224, 0.15)),
+        url('../books.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+/* Optional centered content overlay */
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    color: var(--parchment);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.header-banner {
+    display: none; /* Hide the img element since we're using background image */
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        var(--deep-forest) 0%, 
+        var(--sage-green) 25%, 
+        var(--golden-yellow) 50%, 
+        var(--sage-green) 75%, 
+        var(--deep-forest) 100%);
+}
+
+.navbar {
+    padding: 1rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo h1 {
+    color: var(--warm-cream);
+    font-size: 2.4rem;
+    margin-bottom: 0.25rem;
+}
+
+.tagline {
+    color: var(--light-sage);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--warm-cream);
+    text-decoration: none;
+    font-weight: 400;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--golden-yellow);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--golden-yellow);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--warm-cream);
+    margin: 3px 0;
+    transition: var(--transition);
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 20px; /* Reduced from 100px to bring content closer to nav */
+}
+
+/* Home Section */
+.home-section {
+    background: linear-gradient(135deg, var(--parchment) 0%, var(--warm-cream) 100%);
+    padding: 3rem 0; /* Reduced from 6rem to reduce white space */
+    position: relative;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    color: var(--morris-red);
+    margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.placeholder-image {
+    background-color: var(--light-sage);
+    color: var(--navy-blue);
+    border: 2px dashed var(--sage-green);
+    border-radius: var(--border-radius);
+    width: 250px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--deep-forest);
+    color: var(--warm-cream);
+    border-color: var(--deep-forest);
+}
+
+.btn-primary:hover {
+    background-color: var(--sage-green);
+    border-color: var(--sage-green);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--deep-forest);
+    border-color: var(--deep-forest);
+}
+
+.btn-secondary:hover {
+    background-color: var(--deep-forest);
+    color: var(--warm-cream);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--soft-blue);
+    border-color: var(--soft-blue);
+}
+
+.btn-outline:hover {
+    background-color: var(--soft-blue);
+    color: var(--warm-cream);
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--morris-red);
+    margin-bottom: 3rem;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--sage-green) 12%, 
+        var(--deep-burgundy) 28%,
+        var(--golden-yellow) 50%,
+        var(--deep-burgundy) 72%,
+        var(--sage-green) 88%, 
+        transparent 100%);
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.section-title::after {
+    content: '❦';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--golden-yellow);
+    font-size: 2.2rem;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.25);
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
+}
+
+/* Projects Section */
+.projects-section {
+    background-color: var(--parchment);
+    position: relative;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--warm-cream);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    position: relative;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 40px;
+    height: 40px;
+    border-top: 4px solid var(--golden-yellow);
+    border-left: 4px solid var(--golden-yellow);
+    border-radius: 15px 0 0 0;
+    opacity: 0;
+    transition: var(--transition);
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    border-bottom: 4px solid var(--golden-yellow);
+    border-right: 4px solid var(--golden-yellow);
+    border-radius: 0 0 15px 0;
+    opacity: 0;
+    transition: var(--transition);
+    box-shadow: -3px -3px 6px rgba(0,0,0,0.15);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover::before,
+.project-card:hover::after {
+    opacity: 0.9;
+}
+
+.project-card .placeholder-image {
+    width: 100%;
+    height: 200px;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content h3 {
+    color: var(--deep-forest);
+    margin-bottom: 1rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tag {
+    background-color: var(--light-sage);
+    color: var(--deep-forest);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.project-link {
+    color: var(--soft-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    color: var(--deep-burgundy);
+}
+
+/* CV Section */
+.cv-section {
+    background-color: var(--warm-cream);
+}
+
+.cv-download {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.cv-sections {
+    display: grid;
+    gap: 3rem;
+}
+
+.cv-section h3 {
+    color: var(--deep-burgundy);
+    border-bottom: 2px solid var(--light-sage);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cv-item {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--light-sage);
+    position: relative;
+}
+
+.cv-item::before {
+    content: '✦';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    color: var(--golden-yellow);
+    font-size: 0.8rem;
+    background: var(--warm-cream);
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.cv-item h4 {
+    color: var(--deep-forest);
+    margin-bottom: 0.5rem;
+}
+
+.cv-institution {
+    color: var(--soft-blue);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.cv-description {
+    color: var(--charcoal);
+    font-style: italic;
+}
+
+/* Books Section */
+.books-section {
+    background-color: var(--parchment);
+    position: relative;
+}
+
+.books-grid {
+    display: grid;
+    gap: 3rem;
+}
+
+.book-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    background-color: var(--warm-cream);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.book-cover .placeholder-image {
+    width: 200px;
+    height: 280px;
+    margin: 0;
+}
+
+.book-cover-image {
+    width: 200px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.book-details h3 {
+    color: var(--deep-forest);
+    margin-bottom: 0.5rem;
+}
+
+.book-meta {
+    color: var(--soft-blue);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.book-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+/* Pedagogy Section */
+.pedagogy-section {
+    background-color: var(--warm-cream);
+    position: relative;
+}
+
+.pedagogy-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.pedagogy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.pedagogy-card {
+    background-color: var(--parchment);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--deep-burgundy);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.pedagogy-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background-image: 
+        radial-gradient(circle at 60% 40%, rgba(196, 145, 2, 0.12) 10px, transparent 11px),
+        radial-gradient(circle at 40% 60%, rgba(107, 119, 96, 0.1) 6px, transparent 7px);
+    background-size: 25px 25px, 18px 18px;
+    border-radius: 0 var(--border-radius) 0 60px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.pedagogy-card:hover {
+    border-left-color: var(--golden-yellow);
+    transform: translateX(5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pedagogy-card:hover::before {
+    opacity: 1;
+}
+
+.pedagogy-card h3 {
+    color: var(--deep-forest);
+    margin-bottom: 1rem;
+}
+
+.pedagogy-card ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.pedagogy-card li {
+    margin-bottom: 0.5rem;
+    color: var(--charcoal);
+}
+
+.pedagogy-resources {
+    text-align: center;
+    background-color: var(--parchment);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 2px dashed var(--light-sage);
+}
+
+.pedagogy-resources h3 {
+    color: var(--deep-burgundy);
+    margin-bottom: 1.5rem;
+}
+
+.resource-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Course Materials Section */
+.courses-section {
+    background-color: var(--warm-cream);
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.course-card {
+    background-color: var(--parchment);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--deep-forest);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-image: 
+        radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.1) 8px, transparent 9px),
+        radial-gradient(circle at 30% 70%, rgba(125, 132, 113, 0.08) 5px, transparent 6px);
+    background-size: 20px 20px, 15px 15px;
+    border-radius: 0 var(--border-radius) 0 50px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.course-card:hover {
+    border-left-color: var(--golden-yellow);
+    transform: translateX(5px);
+}
+
+.course-card:hover::before {
+    opacity: 1;
+}
+
+.course-card h3 {
+    color: var(--deep-forest);
+    margin-bottom: 0.5rem;
+}
+
+.course-code {
+    color: var(--soft-blue);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.course-materials {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.material-link {
+    color: var(--deep-burgundy);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--deep-burgundy);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.material-link:hover {
+    background-color: var(--deep-burgundy);
+    color: var(--warm-cream);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--deep-forest);
+    color: var(--warm-cream);
+    padding: 3rem 0 1rem;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 80% 80%, rgba(168, 181, 160, 0.08) 1px, transparent 1px),
+        linear-gradient(45deg, transparent 49%, rgba(125, 132, 113, 0.05) 50%, transparent 51%);
+    background-size: 40px 40px, 60px 60px, 30px 30px;
+    background-position: 0 0, 20px 20px, 10px 10px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.footer .container {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    color: var(--golden-yellow);
+    margin-bottom: 1rem;
+}
+
+.footer-section p,
+.footer-section a {
+    color: var(--warm-cream);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.footer-section a:hover {
+    color: var(--golden-yellow);
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--navy-blue);
+    color: var(--navy-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-image {
+        padding: 1.5rem 0;
+        width: 100%;
+    }
+
+    .header-banner {
+        max-height: 180px;
+        max-width: 85%;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--deep-forest);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .book-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .book-cover .placeholder-image {
+        margin: 0 auto;
+    }
+
+    .pedagogy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-image {
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    .header-banner {
+        max-height: 140px;
+        max-width: 80%;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .book-links,
+    .course-materials {
+        flex-direction: column;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.nav-link:focus,
+.btn:focus,
+.project-link:focus,
+.material-link:focus {
+    outline: 2px solid var(--golden-yellow);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .footer,
+    .cta-buttons {
+        display: none;
+    }
+    
+    .main-content {
+        margin-top: 0;
+    }
+    
+    body {
+        background-color: white;
+        color: black;
+    }
+}
