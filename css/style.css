@@ -155,7 +155,7 @@ body::after {
     border-radius: 0 0 10px 0;
 }
 
-/* Vine pattern for section dividers */
+/* Simple line divider for sections */
 .vine-divider {
     position: relative;
     text-align: center;
@@ -168,44 +168,9 @@ body::after {
     top: 50%;
     left: 0;
     right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        var(--morris-blue) 5%, 
-        var(--morris-red) 25%,
-        var(--golden-yellow) 50%,
-        var(--morris-red) 75%,
-        var(--morris-blue) 95%, 
-        transparent 100%);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.vine-divider::after {
-    content: '🕊 ✠ 🕊';
-    background: var(--warm-cream);
-    padding: 0 1.5rem;
-    color: var(--navy-blue);
-    font-size: 1.5rem;
-    position: relative;
-    z-index: 1;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    letter-spacing: 0.5rem;
-}
-
-/* Enhanced patterns for specific sections */
-.pattern-light {
-    background-image: 
-        radial-gradient(circle at 30% 40%, rgba(125, 132, 113, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 70% 80%, rgba(168, 181, 160, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px, 30px 30px;
-}
-
-.pattern-medium {
-    background-image: 
-        radial-gradient(circle at 25% 25%, rgba(44, 85, 48, 0.15) 2px, transparent 2px),
-        radial-gradient(circle at 75% 75%, rgba(125, 132, 113, 0.1) 1px, transparent 1px),
-        linear-gradient(135deg, transparent 48%, rgba(212, 175, 55, 0.05) 49%, rgba(212, 175, 55, 0.05) 51%, transparent 52%);
-    background-size: 80px 80px, 40px 40px, 60px 60px;
+    height: 1px;
+    background-color: var(--navy-blue);
+    opacity: 0.3;
 }
 
 * {
@@ -583,44 +548,9 @@ p {
     position: relative;
 }
 
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    width: 40px;
-    height: 40px;
-    border-top: 4px solid var(--golden-yellow);
-    border-left: 4px solid var(--golden-yellow);
-    border-radius: 15px 0 0 0;
-    opacity: 0;
-    transition: var(--transition);
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
-}
-
-.project-card::after {
-    content: '';
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    width: 40px;
-    height: 40px;
-    border-bottom: 4px solid var(--golden-yellow);
-    border-right: 4px solid var(--golden-yellow);
-    border-radius: 0 0 15px 0;
-    opacity: 0;
-    transition: var(--transition);
-    box-shadow: -3px -3px 6px rgba(0,0,0,0.15);
-}
-
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
-
-.project-card:hover::before,
-.project-card:hover::after {
-    opacity: 0.9;
 }
 
 .project-card .placeholder-image {
@@ -629,6 +559,26 @@ p {
     margin: 0;
     border-radius: 0;
     border: none;
+}
+
+.project-image {
+    width: calc(100% + 3rem);
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -1.5rem;
+    padding: 0;
+    position: relative;
+}
+
+.project-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    margin: 0;
 }
 
 .project-content {
